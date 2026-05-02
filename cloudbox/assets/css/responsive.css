@@ -1,0 +1,249 @@
+/* responsive.css - Mobile Responsive Styles */
+@media (max-width: 1024px) {
+    .customer-sidebar,
+    .admin-sidebar {
+        width: 240px;
+    }
+    
+    .customer-main {
+        margin-left: 240px;
+        padding: 20px;
+    }
+    
+    .admin-main {
+        margin-left: 240px;
+    }
+    
+    .storage-overview {
+        grid-template-columns: 1fr;
+    }
+    
+    .files-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+    
+    .plans-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .customer-sidebar,
+    .admin-sidebar {
+        transform: translateX(-100%);
+        width: 280px;
+        position: fixed;
+        z-index: 1000;
+    }
+    
+    .customer-sidebar.show,
+    .admin-sidebar.show {
+        transform: translateX(0);
+    }
+    
+    .customer-main,
+    .admin-main {
+        margin-left: 0;
+        padding: 15px;
+    }
+    
+    .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        background: var(--white);
+        box-shadow: var(--shadow);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+    }
+    
+    .menu-toggle {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: var(--secondary);
+    }
+    
+    .mobile-logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    
+    .mobile-logo i {
+        color: var(--primary);
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .chart-card canvas {
+        height: 250px !important;
+    }
+    
+    .storage-details {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    
+    .actions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .plan-card.featured {
+        transform: scale(1);
+    }
+    
+    .payment-methods {
+        grid-template-columns: 1fr;
+    }
+    
+    .auth-card {
+        padding: 30px 20px;
+    }
+    
+    .auth-header h1 {
+        font-size: 24px;
+    }
+    
+    .form-group input,
+    .form-group select {
+        padding: 10px 12px;
+    }
+    
+    .btn-auth {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .customer-main,
+    .admin-main {
+        padding: 10px;
+    }
+    
+    .storage-card {
+        padding: 20px 15px;
+    }
+    
+    .files-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .file-card {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        text-align: left;
+        padding: 15px;
+    }
+    
+    .file-icon {
+        font-size: 36px;
+        margin-bottom: 0;
+    }
+    
+    .file-actions {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+        margin-left: auto;
+    }
+    
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .stat-icon {
+        margin: 0 auto;
+    }
+    
+    .plan-card {
+        padding: 20px;
+    }
+    
+    .plan-price {
+        font-size: 28px;
+    }
+    
+    .amount {
+        font-size: 28px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10px;
+    }
+    
+    .page-header h1 {
+        font-size: 20px;
+    }
+    
+    .storage-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .detail-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--border);
+    }
+    
+    .detail-item:last-child {
+        border-bottom: none;
+    }
+    
+    .admin-table {
+        font-size: 12px;
+    }
+    
+    .admin-table th,
+    .admin-table td {
+        padding: 8px;
+    }
+}
+
+/* Overlay for mobile sidebar */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 99;
+}
+
+.sidebar-overlay.show {
+    display: block;
+}
+
+/* Mobile menu animation */
+@media (max-width: 768px) {
+    .customer-sidebar,
+    .admin-sidebar {
+        transition: transform 0.3s ease;
+    }
+    
+    .customer-sidebar.show,
+    .admin-sidebar.show {
+        box-shadow: 5px 0 25px rgba(0,0,0,0.3);
+    }
+}
